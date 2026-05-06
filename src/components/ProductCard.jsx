@@ -51,6 +51,7 @@ export function ProductCard({ product, onEdit, onDelete }) {
         border: '1px solid var(--border)',
         boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
       }}
+      key={product.id}
     >
       {/* Image */}
       <div 

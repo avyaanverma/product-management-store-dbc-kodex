@@ -14,7 +14,6 @@ export function Pagination({ page, pages, onPageChange }) {
     }
   }
 
-  nums.reverse();
 
   useEffect(() => {
     onPageChange(page);
@@ -36,6 +35,7 @@ export function Pagination({ page, pages, onPageChange }) {
           <span key={`ellipsis-${i}`} className="px-2 text-sm" style={{ color: 'var(--text-muted)' }}>…</span>
         ) : (
           <button
+              key={`ellipsis-${i}`}
             onClick={() => onPageChange(n)}
             className="min-w-[32px] h-8 rounded-lg text-sm font-medium transition-all duration-200"
             style={{

@@ -59,7 +59,9 @@ export function Dashboard() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [search, category, page, addToast]);
+
+  console.log(products);
 
   useEffect(() => {
     const id = setTimeout(fetchProducts, search ? 400 : 0);
@@ -68,7 +70,7 @@ export function Dashboard() {
 
   useEffect(() => {
     setMeta({ ...meta, lastUpdated: new Date() });
-  }, [meta]);
+  }, []);
 
   function handleEdit(product) {
     setEditProduct(product);
@@ -187,8 +189,8 @@ export function Dashboard() {
             variant="secondary"
             size="md"
             onClick={() => {
-              products.sort((a, b) => a.price > b.price);
-              setProducts(products);
+              const NewProducts = products.sort((a, b) => a.price - b.price);
+              setProducts(NewProducts);
             }}
             title="Sort by Price"
           >
