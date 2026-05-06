@@ -189,7 +189,7 @@ export function Dashboard() {
             variant="secondary"
             size="md"
             onClick={() => {
-              const NewProducts = products.sort((a, b) => a.price - b.price);
+              const NewProducts = [...products].sort((a, b) => a.price - b.price);
               setProducts(NewProducts);
             }}
             title="Sort by Price"
