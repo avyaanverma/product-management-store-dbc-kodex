@@ -1,7 +1,12 @@
 import axios from 'axios';
 
+// In dev, Vite proxies `/api` to the backend (see `vite.config.js`).
+// In prod, set `VITE_API_BASE_URL` to something like:
+//   https://pmstore-backend-kodexdbc.onrender.com/api
+const baseURL = import.meta.env.VITE_API_BASE_URL || '/api';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL,
   headers: { 'Content-Type': 'application/json' },
 });
 

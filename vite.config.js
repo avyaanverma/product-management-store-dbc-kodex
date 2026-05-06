@@ -8,6 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
+        // Backend base (no trailing space)
         target: 'https://pmstore-backend-kodexdbc.onrender.com',
         changeOrigin: true,
       },
